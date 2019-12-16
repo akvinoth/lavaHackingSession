@@ -68,7 +68,7 @@ do
     elif ! $STARTED && [ $LOGGEDIN -eq 0 ]; then
         NOW=`date +%s`
         ELAPSED=`expr $NOW - $TIMESTAMP`
-        if [ $ELAPSED -gt 3600 ]; then
+        if [ $ELAPSED -gt 7200 ]; then
             TERMINATED=true
             echo "No user logged in. Terminating session..."
             lava-test-case hacking-session-terminated --result fail --measurement ${ELAPSED} --units seconds
