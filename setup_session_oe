@@ -7,6 +7,8 @@ chmod a+x continue_hacking
 cp continue_hacking /bin/continue_hacking
 chmod a+x invoke_session_oe
 cp invoke_session_oe /bin/invoke_session
+mv /sbin/shutdown /sbin/shutdown.bkp
+mv /sbin/reboot /sbin/reboot.bkp
 
 if [ $# -ne 1 ]; then
     lava-test-case public-key-installed --result fail
